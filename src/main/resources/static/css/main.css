@@ -1,0 +1,54 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none !important; /* IE and Edge */
+    scrollbar-width: none !important; /* Firefox */
+}
+
+.CodeMirror {
+    height: fit-content !important;
+}
+
+.CodeMirror-fullscreen {
+    height: 100% !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+textarea {
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+    border: #ddd 1px solid !important;
+    resize: none !important;
+    padding: 10px !important;
+    font: inherit !important;
+    outline: none !important;
+}
+
+textarea.form-control {
+    background: white !important;
+}
+
+textarea.form-control:valid {
+    background: white !important;
+}
+
+textarea.form-control:invalid {
+    background: white !important;
+}
+
+textarea.form-control[valid] {
+    background: white !important;
+}
+
+
+textarea.form-control[invalid] {
+    background: white !important;
+}
