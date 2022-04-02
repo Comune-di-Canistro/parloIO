@@ -1,7 +1,18 @@
-FROM openjdk:17-alpine
-ARG JAR_FILE=target/*.jar
+FROM maven:3.8.4-openjdk-17-slim AS build
 
-WORKDIR /app
-COPY ${JAR_FILE} parloIO.jar
+COPY src /home/app/src
 
-ENTRYPOINT ["java", "-jar", "parloIO.jar"]
+COPY pom.xml /home/app
+
+RUN mvn -f /home/app/pom.xml clean package
+
+RUN ls /home/app/target
+
+# FROM openjdk:17-alpine
+
+# ARG JAR_FILE=target/*.jar
+
+# WORKDIR /app
+# COPY ${JAR_FILE} parloIO.jar
+
+ENTRYPOINT ["java", "-jar", "/home/app/target/talkIO.jar"]
